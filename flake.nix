@@ -15,11 +15,11 @@
     in {
       defaultPackage.x86_64-linux = pkgs.stdenv.mkDerivation rec {
         name = "anysnake";
-        version = "1.0.6";
+        version = "1.0.7";
         src = pkgs.fetchurl {
           url =
             "https://github.com/TyberiusPrime/anysnake2/releases/download/${version}/anysnake2_${version}_x86_64-unknown-linux-musl.tar.gz";
-          sha256 = "sha256-UFH1/mvCY3JGhlLyeNlVo25u26jaDPoFZfRhlGVFUDo=";
+          sha256 = "sha256-aNdGpaIKIBWeW1U6DMSIpMHR+UbepRX633APiT6wpv8=";
         };
         sourceRoot = ".";
         installPhase = ''
