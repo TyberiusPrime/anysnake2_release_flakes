@@ -39,4 +39,5 @@ else:
 subprocess.check_call(['git','add','.'])
 subprocess.check_call(['git','commit','-m', rev])
 subprocess.check_call(['git','tag', rev])
+subprocess.check_call(['git','push', 'origin'])
 subprocess.check_call(['git','push', 'origin','--tags', '-f'])
