@@ -7,8 +7,6 @@ from pathlib import Path
 import re
 
 rev = sys.argv[1]
-if rev.startswith('v'):
-    rev = rev[1:]
 
 print("putting", rev)
 
@@ -40,6 +38,7 @@ else:
 
 subprocess.check_call(['git','add','.'])
 subprocess.check_call(['git','commit','-m', rev])
-subprocess.check_call(['git','tag', rev])
+rev_without_v = rev if not rev.startswith('v') else rev[1:]
+subprocess.check_call(['git','tag', rev_without_v])
 subprocess.check_call(['git','push', 'origin'])
 subprocess.check_call(['git','push', 'origin','--tags', '-f'])
