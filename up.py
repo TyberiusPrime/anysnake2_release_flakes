@@ -7,6 +7,8 @@ from pathlib import Path
 import re
 
 rev = sys.argv[1]
+if rev.startswith('v'):
+    rev = rev[1:]
 
 print("putting", rev)
 
